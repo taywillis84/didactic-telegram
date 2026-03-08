@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Input Field Highlighter",
+  "version": "1.0.0",
+  "description": "Highlights all user-editable fields so security testers can quickly identify attack surfaces.",
+  "permissions": ["scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["highlight.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "input-field-highlighter@example.local",
+      "strict_min_version": "109.0"
+    }
+  }
+}
